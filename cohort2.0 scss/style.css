@@ -10,26 +10,7 @@ body {
   width: 100%;
 }
 
-main {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main section {
-  height: 50%;
-  width: 50%;
-  background-color: rgb(241, 241, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main section main section h1 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-main section .blue {
+.blue {
   padding: 20px 80px;
   background-color: blue;
   color: white;
@@ -39,7 +20,8 @@ main section .blue {
   cursor: pointer;
   font-size: 15px;
 }
-main section .red {
+
+.red {
   padding: 20px 80px;
   background-color: red;
   color: white;
