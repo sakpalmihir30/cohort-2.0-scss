@@ -12,8 +12,8 @@ body {
     width: 100%;
 }
 .blue{
-    @include button-style(blue);
+    @include button-style(blue,white,18px);
 }
 .red{
-    @include button-style(red);
+    @include button-style(red,black,20px);
 }
