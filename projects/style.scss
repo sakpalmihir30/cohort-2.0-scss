@@ -1,35 +1,308 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
 }
 
 html,
 body {
-    height: 0%;
-    width: 0%;
+    height: 100%;
+    width: 100%;
+
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+body {
+    background-color: #1d1d1d
+}
+
+section {
+    max-width: 2000px;
+}
+
+@mixin flex-coloumn($gap: 0rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
 }
 
 main {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include flex-coloumn(0rem);
+    align-items: center;
 
-
-    section {
+    section.view1 {
         width: 100%;
-        height: 20%;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
+        @include flex-coloumn(1rem);
+        padding: 1rem 2.5rem;
 
-        .top{
+
+        .top {
             width: 100%;
 
-            img{
+            img {
                 width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            background-color: #343434;
+            padding: 1.5rem;
+            @include flex-coloumn(4rem);
+            border-radius: 0.7rem;
+
+            .text {
+                @include flex-coloumn(0.7rem);
+
+                h1 {
+                    font-weight: 500;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    opacity: 0.5;
+                    line-height: 1.5;
+                }
+
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.7rem 1rem;
+                    border-radius: 1.5rem;
+                }
             }
         }
     }
 
+    section.view2 {
+        @include flex-coloumn(1rem);
+        width: 100%;
+        padding: 1rem 2.5rem;
+
+        .top,
+        .bottom {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+
+            .elements {
+
+                text-align: center;
+
+                @include flex-coloumn(0rem);
+
+                small {
+                    opacity: 0.6;
+                }
+
+                h2 {
+                    font-size: 3rem;
+                    font-weight: 300;
+
+                }
+            }
+
+        }
+
+    }
+
+    section.view3 {
+        width: 100%;
+        @include flex-coloumn(1rem);
+        padding: 1rem 2.5rem;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            background-color: #292929;
+            padding: 1.5rem;
+            border-radius: 0.7rem;
+            @include flex-coloumn(3.5rem);
+
+            .text {
+                @include flex-coloumn(1.5rem);
+
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                .paragraph {
+                    p {
+                        font-size: 1rem;
+                        opacity: 0.5;
+                        font-weight: 550;
+                    }
+                }
+            }
+
+
+        }
+
+        .bottom>p {
+            text-transform: uppercase;
+        }
+    }
+
+    section.view4 {
+        @include flex-coloumn(1rem);
+        width: 100%;
+        padding: 0.5rem 2.5rem;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            background-color: #292929;
+            border-radius: 0.7rem;
+            padding: 1.5rem;
+            @include flex-coloumn(3rem);
+
+            .text {
+                @include flex-coloumn(1.5rem);
+
+                h1 {
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+
+                .paragraph {
+                    p {
+                        font-size: 1rem;
+                        opacity: 0.5;
+                        font-weight: 550;
+                    }
+                }
+
+            }
+
+        }
+
+        .bottom>p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+}
+
+
+@media (min-width:800px) {
+
+    main {
+
+
+        section.view1 {
+            flex-direction: row;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 1.5rem 2.5rem;
+
+                .text {
+                    h1 {
+                        font-size: 2.9rem;
+                    }
+
+                    p {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+        }
+
+        section.view2 {
+            flex-direction: row;
+            padding: 1rem 3rem;
+
+        }
+
+        section.view3 {
+            flex-direction: row-reverse;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 1.5rem 2.5rem;
+
+                .text {
+
+                    .paragraph {
+                        display: flex;
+                        gap: 2rem;
+
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.view4 {
+            flex-direction: row;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 1.5rem 2.5rem;
+
+                .text {
+                    h1{
+                        font-size: 1.5rem;
+                    }
+
+                    .paragraph {
+                        display: flex;
+                        gap: 2.5rem;
+
+                        p {
+                            font-size: 0.8rem;
+                            width: 100%;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
