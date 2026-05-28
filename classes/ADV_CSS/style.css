@@ -48,7 +48,7 @@ body {
     gap: 10px;
     border-radius: 10px;
     background: linear-gradient(black) padding-box,
-        conic-gradient(from var(--rotate), black, purple, black)border-box;
+        conic-gradient(from var(--rotate), black, rgb(219, 59, 219), black)border-box;
     border: 00px solid rgba(255, 255, 255, 0);
     animation: borderAnimate 3s;
     animation-iteration-count: infinite;
@@ -62,8 +62,8 @@ body {
 .box:hover {
     animation-play-state: running;
     border-width: 5px;
-    box-shadow: 0 0 70px purple;
-    color: purple;
+    box-shadow: 0 0 70px rgb(214, 36, 214);
+    color: rgb(187, 44, 187);
     text-shadow: 0 0 10px purple;
 
 }
